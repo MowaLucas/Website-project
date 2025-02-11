@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open an Account</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
+</head>
+
+<body>
+  <!--Horizontal Line-->
+    <hr style="margin-top: 0; color:  rgb(0, 0, 26); margin-bottom: 0;">
+    <body style="background: #f5f5f5; font-family: Arial, sans-serif;">
+
+  <!-- Login Section -->
+  <div style=" border-radius: 20px; margin-top: 10px; margin-left: 250px; margin-right: 250px; display: grid; grid-template-columns: 1fr 1fr;  background-image: linear-gradient(to right, rgb(3, 15, 59), rgb(0, 12, 56)); height:632px; padding:16px;">
+  <!-- Left Section - Login Form -->
+    <div class="col-md-6" style="background: white; padding: 40px; border-radius: 10px 0 0 10px; height: 600px; width: 500px;">
+      <h2 style="text-align: center; margin-bottom: 20px; font-weight: 700;">Welcome!</h2>
+      <form>
+          <input type="text" placeholder="Lucas Mowalola" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgb(204, 204, 204); margin-bottom: 20px;">
+          <input type="text" placeholder="mowalolalucas@gmail.com" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgb(204, 204, 204); margin-bottom: 20px;">
+          <input type="password" placeholder="********" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgb(204, 204, 204); margin-bottom: 10px;">
+
+          <button style="width: 100%; background: rgb(58, 58, 227); color: white; padding: 12px; border-radius: 6px; border: none; cursor: pointer; transition: 0.3s; margin-top: 10px; margin-bottom: 10px;" 
+              onmouseover="this.style.background='#0056b3'; this.style.boxShadow='0px 4px 10px rgba(0, 123, 255, 0.3)';" 
+              onmouseout="this.style.background='#3a3ae3'; this.style.boxShadow='none';">
+              Sign Up
+          </button>
+          <hr style="display: inline-block; margin-top: 0px; color:  rgb(0, 0, 26); margin-bottom:0px; width:190px ;">
+          <p style="color: rgb(102, 102, 102); font-size:16px ; display: inline-block; margin-top: 0px; margin-bottom: 0px; margin-left:8px ; margin-right: 8px;">or</p>
+          <hr style="display: inline-block; margin-top: 0px; color:  rgb(0, 0, 26); margin-bottom:0px; width:190px;">
+         <button style="width: 100%; background: white; color:rgb(102, 102, 102); padding: 8px; border-radius: 6px; border: 1px solid rgb(204, 204, 204);; display: block; cursor: pointer; transition: 0.3s; margin-top: 15px;">
+          <img style=" color: rgb(102, 102, 102); width: 32px; height: 32px;" src="7123025_logo_google_g_icon.png" alt=""> Sign up with Google
+         </button>  
+      </form>
+      <p style="text-align: center; color: rgb(102, 102, 102); font-size: 14px; margin-top: 20px;">Already have an account? <a href="login.html" style="color: rgb(34, 34, 34); font-weight: bold;">Log In</a></p>
+
+      <p style="font-size: 14px; text-align: center; margin-top: 10px;">By continuing, you agree to BudgetBuddy  <br> <a style="color: rgb(58, 58, 227);" href="">Terms of Service and Privacy Policy </a></p>
+      <div style="margin-left: 26%;">
+        <a style="color: rgb(58, 58, 227); font-size: 14px; margin-right: 8px;" href="">Need Help?</a>
+        <img style="width: 20px; height: 20px;" src="2986194_facebook_media_social_icon.png" alt="">
+        <img style="width: 20px; height: 20px; margin-left: 8px;" src="2986200_linkdin_logo_media_social_icon.png" alt="">
+        <img style="width: 20px; height: 20px; margin-left: 8px;" src="2986205_media_social_twitter_icon.png" alt="">
+        <img style="width: 20px; height: 20px; margin-left: 8px;" src="2986198_isntagram_media_social_icon.png" alt="">
+      </div>
+  </div>
+  <!--Carousel-->
+  <div>
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button style="width:8px;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button style="width: 4px;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button style="width: 4px;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img style="height: 600px; width: 400px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" src="Pictures/anne-nygard-OtqaCE_SEMI-unsplash.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Set Your Budget for a period of time</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img style="height: 600px; width: 400px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; "  src="Pictures/sajad-nori-XihAgOYNHn4-unsplash.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Track your Spending with ease</h5>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img style="height: 600px; width: 400px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;"  src="Pictures/coinhako-t28IwDyGHnU-unsplash.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Seamless Financial Management</h5>
+          </div>
+        </div>
+      </div>
+      <button style="width: 28px; margin-left: 20px;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button style="width: 28px; margin-right: 20px;"  class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  </div>
+      
+      </body>
+
+
+
+
+<script src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
