@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .budget-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            margin: auto;
+        }
+
+        input, button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .expense-item input {
+            flex: 1;
+            margin-right: 5px;
+        }
+
+        .remove-expense {
+            background: red;
+            color: white;
+            width: 30px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #chart-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="budget-container">
+        <h2>Budget Planner</h2>
+        
+        <label for="income">Monthly Income ($):</label>
+        <input type="number" id="income" placeholder="Enter your income">
+
+        <label for="savings-goal">Savings Goal ($):</label>
+        <input type="number" id="savings-goal" placeholder="Enter savings goal">
+
+        <h3>Expenses</h3>
+        <div id="expenses-list">
+            <div class="expense-item">
+                <input type="text" placeholder="Expense name" class="expense-name">
+                <input type="number" placeholder="Amount ($)" class="expense-amount">
+                <button class="remove-expense">×</button>
+            </div>
+        </div>
+
+        <button id="add-expense">+ Add Expense</button>
+
+        <h3>Total Expenses: $<span id="total-expenses">0</span></h3>
+        <h3>Remaining Budget: $<span id="remaining-budget">0</span></h3>
+        <h3>Savings Progress: <span id="savings-progress">0%</span></h3>
+
+        <div id="chart-container">
+            <canvas id="expense-chart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const incomeInput = document.getElementById("income");
+            const savingsGoalInput = document.getElementById("savings-goal");
+            const expensesList = document.getElementById("expenses-list");
+            const addExpenseBtn = document.getElementById("add-expense");
+            const totalExpensesEl = document.getElementById("total-expenses");
+            const remainingBudgetEl = document.getElementById("remaining-budget");
+            const savingsProgressEl = document.getElementById("savings-progress");
+            const ctx = document.getElementById("expense-chart").getContext("2d");
+
+            let expenseChart = new Chart(ctx, {
+                type: "pie",
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff", "#ff9f40"]
+                    }]
+                }
+            });
+
+            function updateBudget() {
+                let totalExpenses = 0;
+                let expenseLabels = [];
+                let expenseData = [];
+
+                document.querySelectorAll(".expense-item").forEach(item => {
+                    const name = item.querySelector(".expense-name").value || "Unnamed";
+                    const amount = Number(item.querySelector(".expense-amount").value) || 0;
+
+                    totalExpenses += amount;
+                    if (amount > 0) {
+                        expenseLabels.push(name);
+                        expenseData.push(amount);
+                    }
+                });
+
+                const income = Number(incomeInput.value) || 0;
+                const savingsGoal = Number(savingsGoalInput.value) || 0;
+                const remainingBudget = income - totalExpenses;
+                const savingsPercentage = savingsGoal > 0 ? ((remainingBudget / savingsGoal) * 100).toFixed(2) : 0;
+
+                totalExpensesEl.textContent = totalExpenses.toFixed(2);
+                remainingBudgetEl.textContent = remainingBudget.toFixed(2);
+                savingsProgressEl.textContent = Math.min(savingsPercentage, 100) + "%";
+
+                // Update Chart
+                expenseChart.data.labels = expenseLabels;
+                expenseChart.data.datasets[0].data = expenseData;
+                expenseChart.update();
+            }
+
+            incomeInput.addEventListener("input", updateBudget);
+            savingsGoalInput.addEventListener("input", updateBudget);
+
+            addExpenseBtn.addEventListener("click", function () {
+                const expenseDiv = document.createElement("div");
+                expenseDiv.classList.add("expense-item");
+
+                expenseDiv.innerHTML = `
+                    <input type="text" placeholder="Expense name" class="expense-name">
+                    <input type="number" placeholder="Amount ($)" class="expense-amount">
+                    <button class="remove-expense">×</button>
+                `;
+
+                expenseDiv.querySelector(".expense-amount").addEventListener("input", updateBudget);
+                expenseDiv.querySelector(".remove-expense").addEventListener("click", function () {
+                    expenseDiv.remove();
+                    updateBudget();
+                });
+
+                expensesList.appendChild(expenseDiv);
+            });
+        });
+    </script>
+
+</body>
+</html>

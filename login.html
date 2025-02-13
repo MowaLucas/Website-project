@@ -14,16 +14,16 @@
     <hr style="margin-top: 0; color:  rgb(0, 0, 26); margin-bottom: 0;">
     <body style="background: #f5f5f5; font-family: Arial, sans-serif;">
   <!-- Login Section -->
-  <div style=" border-radius: 20px; margin-top: 40px; margin-left: 250px; margin-right: 250px; display: grid; grid-template-columns: 1fr 1fr;  background-image: linear-gradient(to right, rgb(3, 15, 59), rgb(0, 12, 56)); height:632px; padding:16px;">
+  <div style="box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); border-radius: 20px; margin-top: 40px; margin-left: 250px; margin-right: 250px; display: grid; grid-template-columns: 1fr 1fr;  background-image: linear-gradient(to right, rgb(3, 15, 59), rgb(0, 12, 56)); height:632px; padding:16px;">
 
   <!-- Left Section - Login Form -->
     <div class="col-md-6" style="background: white; padding: 40px; border-radius: 10px 0 0 10px; height: 600px; width: 500px;">
       <h2 style="text-align: center; margin-bottom: 30px; margin-top: 40px; font-weight: 700;">Welcome back!</h2>
       <form>
-          <input type="text" placeholder="Mowalola" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgb(204, 204, 204); margin-bottom: 20px;">
-          <input type="password" placeholder="********" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid rgb(204, 204, 204); margin-bottom: 10px;">
+          <input type="text" placeholder="Mowalola" style="background-color: rgb(239, 244, 255); width: 100%; padding: 12px; border-radius: 6px; margin-bottom: 40px; border: none; border-right:4px solid #3a3ae3;">
+          <input type="password" placeholder="********" style="background-color: rgb(239, 244, 255); width: 100%; padding: 12px; border-radius: 6px; margin-bottom: 40px; border: none; border-right:4px solid #3a3ae3;">
 
-          <button style="width: 100%; background: rgb(58, 58, 227); color: white; padding: 12px; border-radius: 6px; border: none; cursor: pointer; transition: 0.3s; margin-top: 10px; margin-bottom: 10px;" 
+          <button style="width: 100%; background: rgb(58, 58, 227); color: white; padding: 12px; border-radius: 6px; border: none; cursor: pointer; transition: 0.3s; margin-top: 10px; margin-bottom: 20px;" 
               onmouseover="this.style.background='#0056b3'; this.style.boxShadow='0px 4px 10px rgba(0, 123, 255, 0.3)';" 
               onmouseout="this.style.background='#3a3ae3'; this.style.boxShadow='none';">
               Get Started
@@ -35,39 +35,30 @@
           <img style=" color: rgb(102, 102, 102); width: 32px; height: 32px;" src="7123025_logo_google_g_icon.png" alt=""> Sign in with Google
          </button>  
       </form>
-      <p style="text-align: center; color: rgb(102, 102, 102); font-size: 14px; margin-top: 20px;">Don't have an account? <a href="signup.html" style="color: rgb(34, 34, 34); font-weight: bold;">Sign Up</a></p>
-
-      <p style="font-size: 14px; text-align: center; margin-top: 10px;">By continuing, you agree to BudgetBuddy  <br> <a style="color: rgb(58, 58, 227);" href="">Terms of Service and Privacy Policy </a></p>
-      <div style="margin-left: 26%;">
-        <a style="color: rgb(58, 58, 227); font-size: 14px; margin-right: 8px;" href="">Need Help?</a>
-        <img style="width: 20px; height: 20px;" src="2986194_facebook_media_social_icon.png" alt="">
-        <img style="width: 20px; height: 20px; margin-left: 8px;" src="2986200_linkdin_logo_media_social_icon.png" alt="">
-        <img style="width: 20px; height: 20px; margin-left: 8px;" src="2986205_media_social_twitter_icon.png" alt="">
-        <img style="width: 20px; height: 20px; margin-left: 8px;" src="2986198_isntagram_media_social_icon.png" alt="">
-      </div>
+      <p style="text-align: center; color: rgb(102, 102, 102); font-size: 14px; margin-top: 20px;">Don't have an account? <a href="signup.html" style="color: #a8a8e0; font-weight: bold;">Sign Up</a></p>
   </div>
   <!--Carousel-->
   <div>
-    <div id="carouselExampleCaptions" class="carousel slide">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button style="width:8px;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button style="width: 4px;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button style="width: 4px;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
-        <div class="carousel-item active">
+        <div class="carousel-item active" data-bs-interval="3000">
           <img style="height: 600px; width: 400px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;" src="Pictures/anne-nygard-OtqaCE_SEMI-unsplash.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>Set Your Budget for a period of time</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="3000">
           <img style="height: 600px; width: 400px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; "  src="Pictures/sajad-nori-XihAgOYNHn4-unsplash.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>Track your Spending with ease</h5>
           </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="3000">
           <img style="height: 600px; width: 400px; border-top-right-radius: 10px; border-bottom-right-radius: 10px;"  src="Pictures/coinhako-t28IwDyGHnU-unsplash.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h5>Seamless Financial Management</h5>
